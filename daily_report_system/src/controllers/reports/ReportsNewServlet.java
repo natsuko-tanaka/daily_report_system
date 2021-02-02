@@ -34,9 +34,9 @@ public class ReportsNewServlet extends HttpServlet {
         request.setAttribute("_token",request.getSession().getId());
 
      // おまじないとしてのインスタンスを生成
-        Report r =new Report();
-        request.setAttribute("report", new Report());
+        Report r = new Report();
         r.setReport_date(new Date(System.currentTimeMillis()));
+        request.setAttribute("report", r);
 
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/reports/new.jsp");
